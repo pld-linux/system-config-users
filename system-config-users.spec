@@ -1,7 +1,7 @@
 Summary:	A graphical interface for administering users and groups
 Name:		system-config-users
 Version:	1.2.80
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		Applications/System
 URL:		http://fedoraproject.org/wiki/SystemConfig/users
