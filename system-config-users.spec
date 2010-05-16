@@ -8,20 +8,18 @@ URL:		http://fedoraproject.org/wiki/SystemConfig/users
 Source0:	%{name}-%{version}.tar.bz2
 # Source0-md5:	07067f69f3b09e8d411ad81d872ad265
 BuildRequires:	/bin/bash
-BuildRequires:	desktop-file-utils
-BuildRequires:	gettext
-BuildRequires:	gnome-doc-utils
+BuildRequires:	gettext-devel
 BuildRequires:	intltool
 BuildRequires:	python >= 2.0
-BuildRequires:	rarian-compat
+BuildRequires:	rpm-pythonprov
 Requires(post,postun):	hicolor-icon-theme
 Requires:	/usr/bin/pgrep
 Requires:	hicolor-icon-theme
 Requires:	python >= 2.0
 Requires:	python-cracklib
 Requires:	python-libuser >= 0.56
-Requires:	python-pygtk-gtk >= 2.6
 Requires:	python-pygtk-glade
+Requires:	python-pygtk-gtk >= 2.6
 Requires:	python-rhpl
 Requires:	python-rpm
 Requires:	xdg-utils
