@@ -1,7 +1,7 @@
 Summary:	A graphical interface for administering users and groups
 Name:		system-config-users
 Version:	1.2.80
-Release:	5
+Release:	6
 License:	GPL v2+
 Group:		Applications/System
 URL:		http://fedoraproject.org/wiki/SystemConfig/users
@@ -12,9 +12,9 @@ BuildRequires:	gettext-devel
 BuildRequires:	intltool
 BuildRequires:	python >= 2.0
 BuildRequires:	rpm-pythonprov
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
 Requires:	/usr/bin/pgrep
-Requires:	hicolor-icon-theme
 Requires:	python >= 2.0
 Requires:	python-cracklib
 Requires:	python-libuser >= 0.56
