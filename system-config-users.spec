@@ -1,7 +1,7 @@
 Summary:	A graphical interface for administering users and groups
 Name:		system-config-users
 Version:	1.2.113
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/System
 URL:		http://fedoraproject.org/wiki/SystemConfig/users
@@ -37,7 +37,8 @@ and groups. It depends on the libuser library.
 
 %build
 %{__make} \
-	SHELL=/bin/bash
+	SHELL=/bin/bash \
+	CONSOLE_USE_CONFIG_UTIL=1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -48,16 +49,11 @@ rm -rf $RPM_BUILD_ROOT
 %py_ocomp $RPM_BUILD_ROOT%{_datadir}/%{name}
 %py_postclean %{_datadir}/%{name}
 
-# we don't have and we don't want consolehelper
-%{__rm} $RPM_BUILD_ROOT%{_bindir}/%{name}
-#%{__rm} $RPM_BUILD_ROOT%{_bindir}/consolehelper
-%{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/%{name}
-cat <<'EOF' > $RPM_BUILD_ROOT%{_bindir}/%{name}
+cat <<'EOF' > $RPM_BUILD_ROOT%{_datadir}/%{name}/%{name}
 #!/bin/sh
 export PYTHONPATH=%{_datadir}/%{name}
 exec %{__python} %{_datadir}/%{name}/%{name}.pyc
 EOF
-chmod a+x $RPM_BUILD_ROOT%{_bindir}/%{name}
 
 %find_lang %{name}
 
