@@ -8,7 +8,7 @@ URL:		http://fedoraproject.org/wiki/SystemConfig/users
 Source0:	http://fedorahosted.org/released/system-config-users/%{name}-%{version}.tar.bz2
 # Source0-md5:	eca1beb0c9792077af265596f26f2286
 BuildRequires:	/bin/bash
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	intltool
 BuildRequires:	python >= 2.0
 BuildRequires:	rpm-pythonprov
